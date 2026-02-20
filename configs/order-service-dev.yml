@@ -3,7 +3,7 @@ spring:
     name: order-service
 
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/orderdb_dev}   # changed from mysql → localhost
+    url: jdbc:mysql://host.docker.internal:3306/orderdb_dev   # changed from mysql → localhost
     username: root
     password: Bindu@217
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,7 +20,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}   # changed from eurekaservice
+      defaultZone: http//host.docker.internal:8761/eureka   # changed from eurekaservice
     register-with-eureka: true
     fetch-registry: true
   instance:
